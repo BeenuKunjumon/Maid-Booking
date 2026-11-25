@@ -67,3 +67,29 @@ For recurring bookings, post to `/api/bookings/recurring` with `startDate`, `day
 - The mock payment gateway always approves payment and refund calls.
 
 With more time: persist repositories to a database, add H2 integration tests and OpenAPI, strengthen per-occurrence payments/refunds, and add a booking ledger for all monetary operations.
+
+## Screenshots
+
+Save your screenshots in `docs/screenshots/`, then replace the filenames below.
+
+### Add a maid
+
+![Add maid using Postman](docs/screenshots/add-maid.png)
+
+### Search available maids
+
+![Search maids using Postman](docs/screenshots/search-maids.png)
+
+### Booking endpoints
+
+| Scheduled booking | Instant booking | Recurring booking |
+|---|---|---|
+| ![Scheduled booking](docs/screenshots/scheduled-booking.png) | ![Instant booking](docs/screenshots/instant-booking.png) | ![Recurring booking](docs/screenshots/recurring-booking.png) |
+
+### Overlap prevention
+
+![Overlapping booking returns Conflict](docs/screenshots/overlap-conflict.png)
+
+### Swagger / OpenAPI
+
+![Swagger API documentation](docs/screenshots/swagger-ui.png)
