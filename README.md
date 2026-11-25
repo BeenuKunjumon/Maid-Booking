@@ -46,28 +46,6 @@ curl -X POST 'http://localhost:8080/api/bookings/BOOKING_ID/cancel?occurrenceSta
 
 For recurring bookings, post to `/api/bookings/recurring` with `startDate`, `days`, `startTime`, `durationMinutes`, and `endDate`.
 
-## Design decisions
-
-- Domain objects validate invariants and preserve state transitions.
-- `MaidFilter` and `MaidSearch` provide composable discovery criteria.
-- `BookingStrategy` implementations isolate instant, scheduled, and recurring occurrence resolution.
-- `PaymentMethod` and `PaymentGateway` separate payment choice from gateway integration.
-- `CancellationPolicy` is injectable and pluggable.
-- `PricingStrategy` supports standard and weekend dynamic pricing; the dynamic strategy applies a 20% surcharge on weekends.
-- Repositories are interfaces with thread-safe in-memory implementations.
-- Booking creation is synchronized per maid and rejects availability violations and overlapping confirmed occurrences.
-- A recurring booking is represented as a set of concrete occurrences. Cancelling one occurrence removes it; cancelling the series marks all occurrences cancelled.
-- Payment calls support booking-level and `Idempotency-Key`-based duplicate protection.
-
-## Assumptions
-
-- Local in-memory state is reset on restart.
-- Availability windows are absolute Java local-date/time ranges.
-- The cancellation policy refunds 100% at least 24 hours before a slot, 50% at least 6 hours before, and 0% otherwise.
-- The mock payment gateway always approves payment and refund calls.
-
-With more time: persist repositories to a database, add H2 integration tests and OpenAPI, strengthen per-occurrence payments/refunds, and add a booking ledger for all monetary operations.
-
 ## Screenshots
 
 Save your screenshots in `docs/screenshots/`, then replace the filenames below.
