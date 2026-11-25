@@ -82,9 +82,15 @@ Save your screenshots in `docs/screenshots/`, then replace the filenames below.
 
 ### Booking endpoints
 
-| Scheduled booking | Instant booking | Recurring booking |
-|---|---|---|
-| ![Scheduled booking](docs/screenshots/scheduled-booking.png) | ![Instant booking](docs/screenshots/instant-booking.png) | ![Recurring booking](docs/screenshots/recurring-booking.png) |
+#### Instant booking
+
+![Instant booking request and response](docs/screenshots/instant-booking.png)
+
+#### Scheduled booking
+
+| Request | Response |
+|---|---|
+| ![Scheduled booking request](docs/screenshots/scheduled-booking-request.png) | ![Scheduled booking response](docs/screenshots/scheduled-booking-response.png) |
 
 ### Overlap prevention
 
